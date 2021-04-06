@@ -4,12 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8b6d9fb8509e435484fc739470656997" Name="Diagram1">
-        <EntityTypeShape EntityType="DemoExamDBModel.Client" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DemoExamDBModel.Realtor" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DemoExamDBModel.Apartment" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="DemoExamDBModel.House" Width="1.5" PointX="2.75" PointY="3.75" />
-        <EntityTypeShape EntityType="DemoExamDBModel.Land" Width="1.5" PointX="4.75" PointY="3.75" />
+      <Diagram DiagramId="5677b47abcdc4687aef35fd3330f79ec" Name="Diagram1">
+        <EntityTypeShape EntityType="DemoExamDBModel.Client" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoExamDBModel.Need" Width="1.5" PointX="7.5" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoExamDBModel.Offer" Width="1.5" PointX="9" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoExamDBModel.RealEstate" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DemoExamDBModel.Realtor" Width="1.5" PointX="4.125" PointY="5.5" IsExpanded="true" />
+        <AssociationConnector Association="DemoExamDBModel.FK_Needs_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoExamDBModel.FK_Offers_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoExamDBModel.FK_Needs_Realtors" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoExamDBModel.FK_Offers_RealEstates" ManuallyRouted="false" />
+        <AssociationConnector Association="DemoExamDBModel.FK_Offers_Realtors" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

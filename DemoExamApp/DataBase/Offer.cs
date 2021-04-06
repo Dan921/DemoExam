@@ -12,16 +12,16 @@ namespace DemoExamApp.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class House
+    public partial class Offer
     {
         public int Id { get; set; }
-        public string CityAddress { get; set; }
-        public string StreetAddress { get; set; }
-        public string HouseAddress { get; set; }
-        public string ApartmentNumberAddress { get; set; }
-        public Nullable<double> CoordinateLatitude { get; set; }
-        public Nullable<double> CoordinateLongitude { get; set; }
-        public Nullable<int> TotalFloors { get; set; }
-        public Nullable<double> TotalArea { get; set; }
+        public Nullable<int> ClientId { get; set; }
+        public Nullable<int> RealtorId { get; set; }
+        public Nullable<int> RealEstateId { get; set; }
+        public Nullable<int> Price { get; set; }
+    
+        public virtual Client Client { get; set; }
+        public virtual RealEstate RealEstate { get; set; }
+        public virtual Realtor Realtor { get; set; }
     }
 }

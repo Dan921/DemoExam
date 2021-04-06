@@ -21,16 +21,16 @@ namespace DemoExamApp.Pages.Property
     /// </summary>
     public partial class AddEditApartmentPage : Page
     {
-        private Apartment _currentApartment = new Apartment();
+        private RealEstate _currentRealEstate = new RealEstate();
 
         private DemoExamDBEntities demoExamDBEntities = new DemoExamDBEntities();
 
-        public AddEditApartmentPage(Apartment selectedApartment)
+        public AddEditApartmentPage(RealEstate selectedRealEstate)
         {
-            if (selectedApartment != null)
-                _currentApartment = demoExamDBEntities.Apartments.Find(selectedApartment.Id);
+            if (selectedRealEstate != null)
+                _currentRealEstate = demoExamDBEntities.RealEstates.Find(selectedRealEstate.Id);
 
-            DataContext = _currentApartment;
+            DataContext = _currentRealEstate;
 
             InitializeComponent();
         }
@@ -38,9 +38,9 @@ namespace DemoExamApp.Pages.Property
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
-            if (_currentApartment.CoordinateLatitude < -90 || _currentApartment.CoordinateLatitude > 90)
+            if (_currentRealEstate.CoordinateLatitude < -90 || _currentRealEstate.CoordinateLatitude > 90)
                 errors.AppendLine("Широта может быть от -90 до 90");
-            if (_currentApartment.CoordinateLongitude < -180 || _currentApartment.CoordinateLongitude > 180)
+            if (_currentRealEstate.CoordinateLongitude < -180 || _currentRealEstate.CoordinateLongitude > 180)
                 errors.AppendLine("Долгота может быть от -180 до 180");
 
             if (errors.Length > 0)
@@ -49,8 +49,11 @@ namespace DemoExamApp.Pages.Property
                 return;
             }
 
-            if (_currentApartment.Id == 0)
-                demoExamDBEntities.Apartments.Add(_currentApartment);
+            if (_currentRealEstate.Id == 0)
+            {
+                _currentRealEstate.Type = "Apartment";
+                demoExamDBEntities.RealEstates.Add(_currentRealEstate);
+            }
             try
             {
                 demoExamDBEntities.SaveChanges();

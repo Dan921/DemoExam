@@ -68,6 +68,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Needs\AddEditNeedPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Needs\NeedsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Offers\AddEditOfferPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Offers\OffersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Property\AddEditApartmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -108,16 +124,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataBase\Apartment.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="DataBase\Client.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBase\House.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBase\Land.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Model.Context.cs">
@@ -135,6 +142,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\Need.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\Offer.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\RealEstate.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\Realtor.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -142,6 +158,18 @@
     <Compile Include="Manager.cs" />
     <Compile Include="Pages\Clients\AddEditClientPage.xaml.cs">
       <DependentUpon>AddEditClientPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Needs\AddEditNeedPage.xaml.cs">
+      <DependentUpon>AddEditNeedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Needs\NeedsPage.xaml.cs">
+      <DependentUpon>NeedsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Offers\AddEditOfferPage.xaml.cs">
+      <DependentUpon>AddEditOfferPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Offers\OffersPage.xaml.cs">
+      <DependentUpon>OffersPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Property\AddEditApartmentPage.xaml.cs">
       <DependentUpon>AddEditApartmentPage.xaml</DependentUpon>
@@ -206,21 +234,21 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="DataBase\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
       <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
     </Content>
     <Content Include="DataBase\Model.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

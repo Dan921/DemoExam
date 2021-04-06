@@ -1,5 +1,7 @@
 ﻿using DemoExamApp.DataBase;
 using DemoExamApp.Logic;
+using DemoExamApp.Pages.Needs;
+using DemoExamApp.Pages.Offers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -92,6 +94,26 @@ namespace DemoExamApp.Pages
                     }
                 }
                 RealtorsGrid.ItemsSource = realtors;
+            }
+        }
+
+        private void OffersButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (RealtorsGrid.SelectedItems.Count > 0)
+            {
+                var offerPage = new OffersPage();
+                offerPage.SetData(null, ((Realtor)RealtorsGrid.SelectedItem).Id);
+                Manager.MainFrame.Navigate(offerPage);
+            }
+        }
+
+        private void NeedsButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (RealtorsGrid.SelectedItems.Count > 0)
+            {
+                var needsPage = new NeedsPage();
+                needsPage.SetData(null, ((Realtor)RealtorsGrid.SelectedItem).Id);
+                Manager.MainFrame.Navigate(needsPage);
             }
         }
     }

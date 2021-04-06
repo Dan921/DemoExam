@@ -21,16 +21,16 @@ namespace DemoExamApp.Pages.Property
     /// </summary>
     public partial class AddEditHousePage : Page
     {
-        private House _currentHouse = new House();
+        private RealEstate _currentRealEstate = new RealEstate();
 
         private DemoExamDBEntities demoExamDBEntities = new DemoExamDBEntities();
 
-        public AddEditHousePage(House selectedHouse)
+        public AddEditHousePage(RealEstate selectedRealEstate)
         {
-            if (selectedHouse != null)
-                _currentHouse = demoExamDBEntities.Houses.Find(selectedHouse.Id);
+            if (selectedRealEstate != null)
+                _currentRealEstate = demoExamDBEntities.RealEstates.Find(selectedRealEstate.Id);
 
-            DataContext = _currentHouse;
+            DataContext = _currentRealEstate;
 
             InitializeComponent();
         }
@@ -38,9 +38,9 @@ namespace DemoExamApp.Pages.Property
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             StringBuilder errors = new StringBuilder();
-            if (_currentHouse.CoordinateLatitude < -90 || _currentHouse.CoordinateLatitude > 90)
+            if (_currentRealEstate.CoordinateLatitude < -90 || _currentRealEstate.CoordinateLatitude > 90)
                 errors.AppendLine("Широта может быть от -90 до 90");
-            if (_currentHouse.CoordinateLongitude < -180 || _currentHouse.CoordinateLongitude > 180)
+            if (_currentRealEstate.CoordinateLongitude < -180 || _currentRealEstate.CoordinateLongitude > 180)
                 errors.AppendLine("Долгота может быть от -180 до 180");
 
             if (errors.Length > 0)
@@ -49,8 +49,11 @@ namespace DemoExamApp.Pages.Property
                 return;
             }
 
-            if (_currentHouse.Id == 0)
-                demoExamDBEntities.Houses.Add(_currentHouse);
+            if (_currentRealEstate.Id == 0)
+            {
+                _currentRealEstate.Type = "House";
+                demoExamDBEntities.RealEstates.Add(_currentRealEstate);
+            }
             try
             {
                 demoExamDBEntities.SaveChanges();

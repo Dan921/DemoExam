@@ -1,0 +1,28 @@
+﻿<Page x:Class="DemoExamApp.Pages.Offers.OffersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemoExamApp.Pages.Offers"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OffersPage" IsVisibleChanged="Page_IsVisibleChanged">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+        <DataGrid Name="OffersGrid" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID Клиента" Binding="{Binding ClientId}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID Риэлтора" Binding="{Binding RealtorId}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="ID Недвижимости" Binding="{Binding RealEstateId}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Добавить" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Name="AddButton" Click="AddButton_Click"></Button>
+        <Button Content="Изменить" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Name="EditButton" Click="EditButton_Click"></Button>
+        <Button Content="Удалить" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Name="DeleteButton" Click="DeleteButton_Click"></Button>
+    </Grid>
+</Page>

@@ -12,6 +12,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="70"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Label Content="Поиск по адресу" Margin="5"></Label>
@@ -25,73 +26,28 @@
             <Label Content="до" Margin="5"></Label>
             <TextBox Name="ToLongitudeSearchTextBox" Width="50" Margin="5" TextChanged="CoordinateSearchTextBox_TextChanged"></TextBox>
         </WrapPanel>
-        <TabControl Grid.Row="1">
-            <TabItem Header="Квартиры">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="70"/>
-                    </Grid.RowDefinitions>
-                    <DataGrid Name="ApartmentsGrid" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Город" Binding="{Binding CityAddress}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Улица" Binding="{Binding StreetAddress}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Дом" Binding="{Binding HouseAddress}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Номер квартиры" Binding="{Binding ApartmentNumberAddress}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Ширина" Binding="{Binding CoordinateLatitude}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Долгота" Binding="{Binding CoordinateLongitude}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Этаж" Binding="{Binding Floor}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Комнаты" Binding="{Binding Rooms}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Площадь" Binding="{Binding TotalArea}" Width="*"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                </DataGrid>
-                    <Button Content="Добавить" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Click="AddApartmentButton_Click"></Button>
-                    <Button Content="Изменить" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="EditApartmentButton_Click"></Button>
-                    <Button Content="Удалить" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Click="DeleteApartmentButton_Click"></Button>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Дома">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="70"/>
-                    </Grid.RowDefinitions>
-                    <DataGrid Name="HousesGrid" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Город" Binding="{Binding CityAddress}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Улица" Binding="{Binding StreetAddress}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Дом" Binding="{Binding HouseAddress}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Ширина" Binding="{Binding CoordinateLatitude}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Долгота" Binding="{Binding CoordinateLongitude}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Этажей" Binding="{Binding TotalFloors}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Площадь" Binding="{Binding TotalArea}" Width="*"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <Button Content="Добавить" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Click="AddHouseButton_Click"></Button>
-                    <Button Content="Изменить" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="EditHouseButton_Click"></Button>
-                    <Button Content="Удалить" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Click="DeleteHouseButton_Click"></Button>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Земли">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="70"/>
-                    </Grid.RowDefinitions>
-                    <DataGrid Name="LandsGrid" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Header="Город" Binding="{Binding CityAddress}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Улица" Binding="{Binding StreetAddress}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Ширина" Binding="{Binding CoordinateLatitude}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Долгота" Binding="{Binding CoordinateLongitude}" Width="*"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Площадь" Binding="{Binding TotalArea}" Width="*"></DataGridTextColumn>
-                        </DataGrid.Columns>
-                    </DataGrid>
-                    <Button Content="Добавить" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Click="AddLandButton_Click"></Button>
-                    <Button Content="Изменить" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Click="EditLandButton_Click"></Button>
-                    <Button Content="Удалить" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Click="DeleteLandButton_Click"></Button>
-                </Grid>
-            </TabItem>
-        </TabControl>
+        <DataGrid Name="RealEstatesGrid" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Тип" Binding="{Binding Type}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Город" Binding="{Binding CityAddress}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Улица" Binding="{Binding StreetAddress}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Дом" Binding="{Binding HouseAddress}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Номер квартиры" Binding="{Binding ApartmentNumberAddress}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Ширина" Binding="{Binding CoordinateLatitude}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Долгота" Binding="{Binding CoordinateLongitude}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Этаж" Binding="{Binding Floor}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Комнаты" Binding="{Binding Rooms}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Площадь" Binding="{Binding TotalArea}" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Header="Всего этажей" Binding="{Binding TotalFloors}" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <WrapPanel  Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Добавить квартиру" Click="AddApartmentButton_Click"></Button>
+            <Button Content="Добавить дом" Click="AddHouseButton_Click"></Button>
+            <Button Content="Добавить землю" Click="AddLandButton_Click"></Button>
+            <Button Content="Изменить" Click="EditButton_Click"></Button>
+            <Button Content="Удалить" Click="DeleteButton_Click"></Button>
+        </WrapPanel>
     </Grid>
 </Page>

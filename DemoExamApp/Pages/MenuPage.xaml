@@ -13,6 +13,8 @@
             <Button Content="Клиенты" Click="ClientsButton_Click"/>
             <Button Content="Риэлторы" Click="RealtorsButton_Click"/>
             <Button Content="Недвижимость" Click="PropertyButton_Click"/>
+            <Button Content="Предложения" Click="OffersButton_Click"/>
+            <Button Content="Потребности" Click="NeedsButton_Click"/>
         </WrapPanel>
     </Grid>
 </Page>

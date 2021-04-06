@@ -23,16 +23,16 @@
                 <TextBox Text="{Binding HouseAddress}" Width="200" Margin="5" FontSize="15"></TextBox>
             </WrapPanel>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                <Label Content="Номер квартиры" Margin="5"></Label>
-                <TextBox Text="{Binding ApartmentNumberAddress}" Width="200" Margin="5" FontSize="15"></TextBox>
-            </WrapPanel>
-            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                 <Label Content="Широта" Margin="5"></Label>
                 <TextBox Text="{Binding CoordinateLatitude}" Width="200" Margin="5" FontSize="15"></TextBox>
             </WrapPanel>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                 <Label Content="Долгота" Margin="5"></Label>
                 <TextBox Text="{Binding CoordinateLongitude}" Width="200" Margin="5" FontSize="15"></TextBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Комнат" Margin="5"></Label>
+                <TextBox Text="{Binding Rooms}" Width="200" Margin="5" FontSize="15"></TextBox>
             </WrapPanel>
             <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                 <Label Content="Этажей" Margin="5"></Label>

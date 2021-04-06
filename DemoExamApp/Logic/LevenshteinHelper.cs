@@ -28,6 +28,15 @@ namespace DemoExamApp.Logic
 
         private int LevenshteinDistance(string firstWord, string secondWord)
         {
+            if(firstWord == null)
+            {
+                firstWord = "";
+            }
+            if (secondWord == null)
+            {
+                secondWord = "";
+            }
+
             var n = firstWord.Length + 1;
             var m = secondWord.Length + 1;
             var matrixD = new int[n, m];

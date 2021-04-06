@@ -20,6 +20,7 @@
         </WrapPanel>
         <DataGrid Name="ClientsGrid" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
             <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Имя" Binding="{Binding FirstName}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding LastName}" Width="*"></DataGridTextColumn>
                 <DataGridTextColumn Header="Отчество" Binding="{Binding MiddleName}" Width="*"></DataGridTextColumn>
@@ -27,8 +28,12 @@
                 <DataGridTextColumn Header="Электронная почта" Binding="{Binding Email}" Width="*"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Добавить" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Name="AddButton" Click="AddButton_Click"></Button>
-        <Button Content="Изменить" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Name="EditButton" Click="EditButton_Click"></Button>
-        <Button Content="Удалить" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" Name="DeleteButton" Click="DeleteButton_Click"></Button>
+        <WrapPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Добавить" Grid.Row="2" Name="AddButton" Click="AddButton_Click"></Button>
+            <Button Content="Изменить" Grid.Row="2" Name="EditButton" Click="EditButton_Click"></Button>
+            <Button Content="Удалить" Grid.Row="2" Name="DeleteButton" Click="DeleteButton_Click"></Button>
+            <Button Content="Предложения" Grid.Row="2" Name="OffersButton" Click="OffersButton_Click"></Button>
+            <Button Content="Потребности" Grid.Row="2" Name="NeedsButton" Click="NeedsButton_Click"></Button>
+        </WrapPanel>
     </Grid>
 </Page>

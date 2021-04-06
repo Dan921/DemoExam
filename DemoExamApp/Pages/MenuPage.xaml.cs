@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DemoExamApp.Pages.Needs;
+using DemoExamApp.Pages.Offers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,6 +40,16 @@ namespace DemoExamApp.Pages
         private void PropertyButton_Click(object sender, RoutedEventArgs e)
         {
             Manager.MainFrame.Navigate(new PropertyPage());
+        }
+
+        private void OffersButton_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new OffersPage());
+        }
+
+        private void NeedsButton_Click(object sender, RoutedEventArgs e)
+        {
+            Manager.MainFrame.Navigate(new NeedsPage());
         }
     }
 }

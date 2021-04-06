@@ -26,9 +26,9 @@ namespace DemoExamApp.DataBase
         }
     
         public virtual DbSet<Client> Clients { get; set; }
+        public virtual DbSet<Need> Needs { get; set; }
+        public virtual DbSet<Offer> Offers { get; set; }
+        public virtual DbSet<RealEstate> RealEstates { get; set; }
         public virtual DbSet<Realtor> Realtors { get; set; }
-        public virtual DbSet<Apartment> Apartments { get; set; }
-        public virtual DbSet<House> Houses { get; set; }
-        public virtual DbSet<Land> Lands { get; set; }
     }
 }

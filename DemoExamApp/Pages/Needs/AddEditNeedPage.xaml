@@ -1,0 +1,72 @@
+﻿<Page x:Class="DemoExamApp.Pages.Needs.AddEditNeedPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:DemoExamApp.Pages.Needs"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditNeedPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <WrapPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Клиент" Margin="5"></Label>
+                <ComboBox Name="ClientsComboBox" SelectedItem="{Binding Client}" DisplayMemberPath="Id" Width="200" Margin="5" FontSize="15"></ComboBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Риэлтор" Margin="5"></Label>
+                <ComboBox Name="RealorsComboBox" SelectedItem="{Binding Realtor}" DisplayMemberPath="Id" Width="200" Margin="5" FontSize="15"></ComboBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Недвижимость" Margin="5"></Label>
+                <ComboBox Name="RealEstatesComboBox" SelectedItem="{Binding TypeOfRealEstate}" Width="200" Margin="5" FontSize="15" SelectionChanged="RealEstatesComboBox_SelectionChanged"></ComboBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Адрес" Margin="5"></Label>
+                <TextBox Text="{Binding Address}" Width="200" Margin="5" FontSize="15"></TextBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Мин. цена" Margin="5"></Label>
+                <TextBox Text="{Binding MinPrice}" Width="200" Margin="5" FontSize="15"></TextBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Макс. цена" Margin="5"></Label>
+                <TextBox Text="{Binding MaxPrice}" Width="200" Margin="5" FontSize="15"></TextBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Мин. площадь" Margin="5"></Label>
+                <TextBox Text="{Binding MinTotalArea}" Width="200" Margin="5" FontSize="15"></TextBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Макс. площадь" Margin="5"></Label>
+                <TextBox Text="{Binding MaxTotalArea}" Width="200" Margin="5" FontSize="15"></TextBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Мин. комнат" Margin="5"></Label>
+                <TextBox Name="MinRoomsTextBox" Text="{Binding MinRooms}" Width="200" Margin="5" FontSize="15" IsEnabled="False"></TextBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Макс. комнат" Margin="5"></Label>
+                <TextBox Name="MaxRoomsTextBox" Text="{Binding MaxRooms}" Width="200" Margin="5" FontSize="15" IsEnabled="False"></TextBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Мин. этаж" Margin="5"></Label>
+                <TextBox Name="MinFloorTextBox" Text="{Binding MinFloor}" Width="200" Margin="5" FontSize="15" IsEnabled="False"></TextBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Макс. этаж" Margin="5"></Label>
+                <TextBox Name="MaxFloorTextBox" Text="{Binding MaxFloor}" Width="200" Margin="5" FontSize="15" IsEnabled="False"></TextBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Мин. этажей" Margin="5"></Label>
+                <TextBox Name="MinTotalFloorsTextBox" Text="{Binding MinTotalFloors}" Width="200" Margin="5" FontSize="15" IsEnabled="False"></TextBox>
+            </WrapPanel>
+            <WrapPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Label Content="Макс. этажей" Margin="5"></Label>
+                <TextBox Name="MaxTotalFloorsTextBox" Text="{Binding MaxTotalFloors}" Width="200" Margin="5" FontSize="15" IsEnabled="False"></TextBox>
+            </WrapPanel>
+            <Button Content="Сохранить" Width="150" Margin="25" Click="Button_Click"></Button>
+        </WrapPanel>
+    </Grid>
+</Page>
